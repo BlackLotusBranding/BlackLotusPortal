@@ -137,3 +137,34 @@ a:not(.btn):not(.brand):not(.card):not(.pill):not(.links a){text-decoration:none
     font-size:clamp(28px,9vw,40px) !important;
   }
 }
+
+/* V3.7 — ONLY FIX: Scout Academy banner crop + one-line centered title block */
+.feature-img{
+  max-height:none !important;
+  height:auto !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+.training-main-title{
+  white-space:nowrap !important;
+  text-align:center !important;
+  max-width:100% !important;
+  margin:22px auto 14px !important;
+  font-size:clamp(30px,2.8vw,44px) !important;
+  line-height:1.05 !important;
+  letter-spacing:.065em !important;
+}
+.training-main-title + .subtitle{
+  text-align:center !important;
+  max-width:880px !important;
+  margin:0 auto 20px !important;
+}
+.training-main-title + .subtitle + .top-actions{
+  justify-content:center !important;
+}
+@media(max-width:900px){
+  .training-main-title{
+    white-space:normal !important;
+    font-size:clamp(28px,7vw,40px) !important;
+  }
+}
