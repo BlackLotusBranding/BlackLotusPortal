@@ -1,19 +1,13 @@
-# Black Lotus Operating System — Version 2
+# Black Lotus Operating System — Version 3.1
 
-This is the polished Version 2 release of the Black Lotus Branding employee portal.
+This release fixes the V3 homepage hero layout so the new heading no longer overlaps the Employment Hub banner image.
 
-## Updates included
+## Fixes included
 
-- Renamed Downloads to Resource Center
-- Renamed Forms to Scout Services
-- Added Client Portal preview page
-- Restored desktop cursor glow
-- Replaced the Vision image grid with a carousel
-- Removed default blue link underlines
-- Added luxury rose-gold hover effects
-- Added frosted-glass navigation
-- Improved spacing, cards, hero section, and mobile navigation
+- Separated the hero banner image from the Begin Your Journey text
+- Preserved the luxury cursor glow
+- Preserved the Vision carousel
+- Preserved Resource Center, Scout Services, Workspace, and Client Portal navigation
+- Improved homepage readability and spacing
 
-## Upload instructions
-
-Upload the contents of this folder to the GitHub repository root. The `index.html` file should be visible at the top level of the repository.
+Upload the contents of this folder to the BlackLotusPortal repository, replacing the existing files.
