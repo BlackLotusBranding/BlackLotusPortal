@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
-  const current=location.pathname.split('/').pop()||'index.html';
+  const path=location.pathname;
+  const current=path.split('/').pop()||'index.html';
   document.querySelectorAll('.links a').forEach(a=>{
     const href=a.getAttribute('href')||'';
-    if(href.endsWith(current)||(current==='index.html'&&href.endsWith('../index.html'))) a.classList.add('active');
+    if(href.endsWith(current)||(current==='index.html'&&/index\.html$/.test(href))) a.classList.add('active');
   });
 
   if(matchMedia('(pointer:fine)').matches){
@@ -26,6 +27,14 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   }
 
+  const revealItems=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); obs.unobserve(entry.target); } });
+    },{threshold:.12});
+    revealItems.forEach(item=>obs.observe(item));
+  }else{ revealItems.forEach(item=>item.classList.add('in')); }
+
   const shell=document.querySelector('.carousel-shell');
   if(shell){
     const track=shell.querySelector('.carousel-track');
@@ -41,13 +50,18 @@ document.addEventListener('DOMContentLoaded',()=>{
     shell.querySelector('.next')?.addEventListener('click',()=>show(index+1));
     shell.querySelector('.prev')?.addEventListener('click',()=>show(index-1));
     dots.forEach((dot,k)=>dot.addEventListener('click',()=>show(k)));
-    const play=()=>{timer=setInterval(()=>show(index+1),5600);};
+    const play=()=>{ timer=setInterval(()=>show(index+1),5600); };
     const stop=()=>clearInterval(timer);
     shell.addEventListener('mouseenter',stop);
     shell.addEventListener('mouseleave',play);
     shell.addEventListener('focusin',stop);
     shell.addEventListener('focusout',play);
-    show(0);
-    play();
+    let startX=0;
+    shell.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; },{passive:true});
+    shell.addEventListener('touchend',e=>{
+      const dx=e.changedTouches[0].clientX-startX;
+      if(Math.abs(dx)>45) show(index+(dx<0?1:-1));
+    },{passive:true});
+    show(0); play();
   }
 });

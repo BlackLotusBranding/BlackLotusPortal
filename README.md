@@ -1,13 +1,20 @@
-# Black Lotus Operating System — Version 3.1
+# Black Lotus Operating System — Version 3 Luxury Edition
 
-This release fixes the V3 homepage hero layout so the new heading no longer overlaps the Employment Hub banner image.
+This release polishes the Black Lotus Branding employee portal into a premium operating-system style experience.
 
-## Fixes included
+## Included
 
-- Separated the hero banner image from the Begin Your Journey text
-- Preserved the luxury cursor glow
-- Preserved the Vision carousel
-- Preserved Resource Center, Scout Services, Workspace, and Client Portal navigation
-- Improved homepage readability and spacing
+- Clean **Begin Your Journey** homepage layout
+- Separated hero banner and intro content so text does not overlap the image
+- Restored desktop cursor glow
+- Black Lotus Vision carousel
+- Resource Center navigation
+- Scout Services navigation
+- Client Portal preview
+- Luxury rose-gold hover effects
+- Removed default blue underlines
+- Polished responsive styling
 
-Upload the contents of this folder to the BlackLotusPortal repository, replacing the existing files.
+## Upload to GitHub Pages
+
+Upload the contents of this folder to the `BlackLotusPortal` repository, replacing the existing files. Keep `index.html` at the top level.
