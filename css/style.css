@@ -168,3 +168,58 @@ a:not(.btn):not(.brand):not(.card):not(.pill):not(.links a){text-decoration:none
     font-size:clamp(28px,7vw,40px) !important;
   }
 }
+
+
+/* V3.8 — GLOBAL PAGE HEADER ALIGNMENT + FULL TRAINING IMAGE FIX */
+/* Show page banner artwork in full instead of cropping. */
+.feature-img,
+.training-hero-image{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Match all inner page headings to the fixed Scout Academy layout. */
+main.wrap.section > .title,
+main .wrap.section > .title,
+section.wrap.section > .title,
+.training-main-title{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  margin:22px auto 14px !important;
+  font-size:clamp(30px,2.8vw,44px) !important;
+  line-height:1.05 !important;
+  letter-spacing:.065em !important;
+}
+
+main.wrap.section > .subtitle,
+main .wrap.section > .subtitle,
+section.wrap.section > .subtitle,
+.training-main-title + .subtitle{
+  text-align:center !important;
+  max-width:880px !important;
+  margin:0 auto 20px !important;
+}
+
+main.wrap.section > .top-actions,
+main .wrap.section > .top-actions,
+section.wrap.section > .top-actions,
+.training-main-title + .subtitle + .top-actions{
+  justify-content:center !important;
+}
+
+@media(max-width:900px){
+  main.wrap.section > .title,
+  main .wrap.section > .title,
+  section.wrap.section > .title,
+  .training-main-title{
+    white-space:normal !important;
+    font-size:clamp(28px,7vw,40px) !important;
+  }
+}
