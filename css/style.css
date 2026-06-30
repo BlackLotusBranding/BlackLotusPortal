@@ -115,3 +115,25 @@ a:not(.btn):not(.brand):not(.card):not(.pill):not(.links a){text-decoration:none
   margin-right:0 !important;
   max-width:900px !important;
 }
+
+/* V3.6 — ONLY FIX: Scout Academy title one line and centered subtitle */
+.training-main-title{
+  white-space:nowrap !important;
+  text-align:center !important;
+  max-width:100% !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  font-size:clamp(32px,3.35vw,52px) !important;
+}
+.training-main-title + .subtitle{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  max-width:840px !important;
+}
+@media(max-width:720px){
+  .training-main-title{
+    white-space:normal !important;
+    font-size:clamp(28px,9vw,40px) !important;
+  }
+}
