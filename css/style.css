@@ -94,5 +94,5 @@ a:not(.btn):not(.brand):not(.card):not(.pill):not(.links a){text-decoration:none
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.cursor-glow,body::before,body::after{display:none!important}.reveal{opacity:1;transform:none}}
 
 .about-section{text-align:center}
-.about-frame{margin:22px auto 0;max-width:1120px;border:1px solid var(--line);border-radius:30px;overflow:hidden;background:#050405;box-shadow:var(--shadow)}
+.about-frame{margin:22px auto 0;max-width:720px;border:1px solid var(--line);border-radius:30px;overflow:hidden;background:#050405;box-shadow:var(--shadow)}
 .about-frame img{display:block;width:100%;height:auto}
